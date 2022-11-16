@@ -1,0 +1,10 @@
+
+host: 127.0.0.1
+user: jotte
+key: 1724213ebb1733b5fe57b49719059e35
+url: http://127.0.0.1:8000/shazam?output=mp3
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/Theo/Documents/GitHub/jotte-api/./main.py", line 151, in shazam
+    res = json.loads(r).get("track", {})
+Exception: stdout is empty, but stderr returned Error: reqwest::Error { kind: Request, url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("amp.shazam.com")), port: None, path: "/discovery/v5/en/US/android/-/tag/36952644-F39B-43EC-B1D1-F4CBA9FB54E6/36528bc8-3e4a-41e5-9314-89836c26b365", query: Some("sync=true&webv3=true&sampling=true&connected=&shazamapiversion=v3&sharehub=true&video=v3"), fragment: None }, source: hyper::Error(Connect, ConnectError("tcp connect error", Os { code: 111, kind: ConnectionRefused, message: "Connection refused" })) }
