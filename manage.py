@@ -12,7 +12,7 @@ load_dotenv()
 async def main(parser: argparse.ArgumentParser):
     args = parser.parse_args()
 
-    db = await asyncpg.create_pool(dsn=f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@localhost/api")
+    db = await asyncpg.create_pool(dsn=f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@localhost/miran")
     await db.execute("CREATE TABLE IF NOT EXISTS users (name TEXT PRIMARY KEY, api_key TEXT)")
     
     if args.action.lower() == "adduser":

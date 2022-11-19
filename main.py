@@ -21,7 +21,7 @@ if __name__ == "main":
 
 @app.on_event("startup")
 async def startup_event():
-    app.db = await asyncpg.create_pool(dsn=f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@localhost/api")
+    app.db = await asyncpg.create_pool(dsn=f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@localhost/miran")
     await app.db.execute("CREATE TABLE IF NOT EXISTS users (name TEXT PRIMARY KEY, api_key TEXT)")
     print("Initialized DB")
         
