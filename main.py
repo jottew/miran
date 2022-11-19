@@ -28,3 +28,6 @@ async def startup_event():
 @app.get("/")
 async def homepage():
     return "i love big black oiled up men"
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=5000, log_level="info")
