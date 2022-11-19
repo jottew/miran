@@ -49,7 +49,6 @@ six==1.16.0
 sniffio==1.3.0
 SQLAlchemy==1.4.44
 starlette==0.20.4
-systemd-python==234
 tqdm==4.64.1
 typing_extensions==4.4.0
 ubuntu-advantage-tools==27.11.3
