@@ -14,10 +14,8 @@ if __name__ == "main":
             continue
         name = f"routes.{route[:-3]}"
         imp = __import__(name)
-        print(name)
-        print(dir(imp))
-        print(getattr(__import__(f"routes.{route[:-3]}"), route[:-3]).router)
         app.include_router(getattr(__import__(f"routes.{route[:-3]}"), route[:-3]).router) 
+        print("loaded "+name)
 
 @app.on_event("startup")
 async def startup_event():

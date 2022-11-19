@@ -1,0 +1,13 @@
+[Unit]
+Description=miran
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/jotte/miran
+ExecStart=/bin/bash -c '/home/jotte/miran/venv/bin/python main.py'
+User=root
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
