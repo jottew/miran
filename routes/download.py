@@ -3,7 +3,6 @@ import aiofiles
 import asyncio
 import string
 import random
-import magic
 import utils
 import os
 
@@ -20,6 +19,10 @@ from utils import keys
 router = APIRouter()
 platforms = ["tiktok", "youtube"]
 outputs = ["audio", "video"]
+filetypes = {
+    "video": "video/mp4",
+    "audio": "audio/mp3"
+}
 
 @router.post("/download")
 async def download(request: Request, url: str, platform: str, output: str, Authorization: APIKey = None):
@@ -65,7 +68,7 @@ async def download(request: Request, url: str, platform: str, output: str, Autho
             async with aiofiles.open(fn, "rb") as f:
                 data = await f.read()
                 
-            content_type = magic.from_buffer(BytesIO(data).read(2048), mime=True)
+            content_type = filetypes.get(output.lower())
         
         return Response(content=data, media_type=content_type)
     except Exception as exc:
