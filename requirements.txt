@@ -51,9 +51,6 @@ SQLAlchemy==1.4.44
 starlette==0.20.4
 tqdm==4.64.1
 typing_extensions==4.4.0
-ubuntu-advantage-tools==27.11.3
-ufw==0.36.1
-unattended-upgrades==0.1
 urllib3==1.26.12
 uvicorn==0.19.0
 uvloop==0.17.0
