@@ -1,3 +1,4 @@
+import uvicorn
 import asyncpg
 import os
 
@@ -27,3 +28,5 @@ async def startup_event():
 @app.get("/")
 async def homepage():
     return "i love big black oiled up men"
+
+uvicorn.run("main:app", port=5000)
